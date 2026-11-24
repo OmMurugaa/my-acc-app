@@ -1,5 +1,6 @@
 // Pure TypeScript OpenXML (.xlsx) generator using standard ZIP (STORE method) + CRC32.
 // Avoids third-party SheetJS/xlsx vulnerabilities and keeps offline PWA bundle minimal.
+import {saveOrShareBlob} from './fileDownload';
 
 const crcTable = (() => {
   const table = new Uint32Array(256);
@@ -184,12 +185,6 @@ export function downloadRowsAsXlsx(
     {name: 'xl/worksheets/sheet1.xml', data: enc.encode(sheetXml)},
   ]);
 
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename.endsWith('.xlsx') ? filename : `${filename}.xlsx`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  const outName = filename.endsWith('.xlsx') ? filename : `${filename}.xlsx`;
+  void saveOrShareBlob(blob, outName);
 }

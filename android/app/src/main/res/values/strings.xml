@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MyFinance Account</string>
+    <string name="title_activity_main">MyFinance Account</string>
+    <string name="package_name">com.murugaa.myfinance</string>
+    <string name="custom_url_scheme">com.murugaa.myfinance</string>
+</resources>

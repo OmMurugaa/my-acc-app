@@ -3,17 +3,11 @@ import {Download, Upload} from 'lucide-react';
 import {useVault} from '../context/VaultContext';
 import {t} from '../i18n/translations';
 import {getTodayISO} from '../utils/formatters';
+import {saveOrShareBlob} from '../utils/fileDownload';
 
-function downloadJsonFile(data: unknown, filename: string) {
+async function downloadJsonFile(data: unknown, filename: string) {
   const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  await saveOrShareBlob(blob, filename);
 }
 
 export const BackupView: React.FC = () => {
@@ -58,7 +52,7 @@ export const BackupView: React.FC = () => {
     setExporting(true);
     try {
       const encrypted = await exportEncryptedBackup(backupPassword);
-      downloadJsonFile(encrypted, `MyFinanceAccount_Backup_${getTodayISO()}.mfa`);
+      await downloadJsonFile(encrypted, `MyFinanceAccount_Backup_${getTodayISO()}.mfa`);
       setNotice('AES-256-GCM encrypted backup file downloaded.');
       setBackupPassword('');
     } catch (err) {
@@ -320,7 +314,7 @@ export const BackupView: React.FC = () => {
                       return;
                     }
                     const fileObj = await downloadAutoBackupSnapshot(snap, pw);
-                    downloadJsonFile(fileObj, `MyFinanceAccount_AutoBackup_${snap.monthKey}.mfa`);
+                    await downloadJsonFile(fileObj, `MyFinanceAccount_AutoBackup_${snap.monthKey}.mfa`);
                     setNotice(`Downloaded encrypted snapshot for ${snap.monthKey}.`);
                   }}
                   className="inline-flex items-center gap-1.5 rounded-lg border app-border px-3 py-1.5 text-xs font-medium min-h-[36px]"

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Capacitor} from '@capacitor/core';
 import {Download, WifiOff, X} from 'lucide-react';
 import {usePWAInstall} from '../hooks/usePWAInstall';
 import {useOnlineStatus} from '../hooks/useOnlineStatus';
@@ -7,7 +8,7 @@ export const PWAInstallButton: React.FC<{compact?: boolean}> = ({compact = false
   const {isInstallable, isInstalled, isIOS, install} = usePWAInstall();
   const [showIOSGuide, setShowIOSGuide] = useState(false);
 
-  if (isInstalled) return null;
+  if (Capacitor.isNativePlatform() || isInstalled) return null;
 
   if (isInstallable) {
     return (
@@ -74,7 +75,7 @@ export const PWAInstallButton: React.FC<{compact?: boolean}> = ({compact = false
 
 export const OfflineIndicator: React.FC = () => {
   const isOnline = useOnlineStatus();
-  if (isOnline) return null;
+  if (Capacitor.isNativePlatform() || isOnline) return null;
 
   return (
     <div className="no-print fixed bottom-20 lg:bottom-4 left-4 z-40 flex items-center gap-2 rounded-lg border border-amber-500/40 bg-amber-600 px-3 py-2 text-xs font-medium text-white shadow-lg">

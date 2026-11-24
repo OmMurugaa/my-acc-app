@@ -1,0 +1,11 @@
+{
+	"appId": "com.murugaa.myfinance",
+	"appName": "MyFinance Account",
+	"webDir": "dist",
+	"server": {
+		"androidScheme": "https"
+	},
+	"android": {
+		"backgroundColor": "#0A0E17"
+	}
+}
