@@ -157,7 +157,7 @@ export function exportTransactionsToExcel(
   categories: Category[],
   currency: CurrencyCode,
   dateFormat: DateFormat,
-  filenamePrefix = 'MyFirstAccount_Ledger'
+  filenamePrefix = 'MyFinanceAccount_Ledger'
 ): void {
   const catMap = new Map(categories.map((c) => [c.id, c.name]));
   const headers = [

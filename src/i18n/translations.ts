@@ -2,7 +2,7 @@ import type {Language} from '../types/finance';
 
 export const TRANSLATIONS: Record<Language, Record<string, string>> = {
   en: {
-    appName: 'MyFirst Account',
+    appName: 'MyFinance Account',
     navDashboard: 'Dashboard',
     navTransactions: 'Transactions',
     navMonthly: 'Monthly Reports',
@@ -57,12 +57,12 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
     masterPassword: 'Master Password',
     unlockButton: 'Unlock Vault',
     wrongPassword: 'Incorrect password or corrupted key wrapper.',
-    setupWizardTitle: 'MyFirst Account Setup',
+    setupWizardTitle: 'MyFinance Account Setup',
     offlineReady: 'Offline Encrypted Storage',
     installApp: 'Install App',
   },
   ta: {
-    appName: 'MyFirst Account',
+    appName: 'MyFinance Account',
     navDashboard: 'முகப்பு',
     navTransactions: 'வரவு-செலவு',
     navMonthly: 'மாத அறிக்கை',
@@ -117,12 +117,12 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
     masterPassword: 'கடவுச்சொல் (Master Password)',
     unlockButton: 'திறக்கவும்',
     wrongPassword: 'தவறான கடவுச்சொல். மீண்டும் முயற்சிக்கவும்.',
-    setupWizardTitle: 'MyFirst Account ஆரம்ப அமைப்பு',
+    setupWizardTitle: 'MyFinance Account ஆரம்ப அமைப்பு',
     offlineReady: 'இணையம் இன்றி இயங்கும்',
     installApp: 'App நிறுவுக',
   },
   tanglish: {
-    appName: 'MyFirst Account',
+    appName: 'MyFinance Account',
     navDashboard: 'Dashboard',
     navTransactions: 'Transactions',
     navMonthly: 'Monthly Reports',

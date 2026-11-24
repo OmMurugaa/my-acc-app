@@ -21,8 +21,8 @@ export default defineConfig(() => {
         ],
         manifest: {
           id: '/',
-          name: 'MyFirst Account App',
-          short_name: 'MyFirstAcct',
+          name: 'MyFinance Account v2.00 by Murugaa.AiStudio',
+          short_name: 'MyFinance',
           description:
             'Offline-first AES-256-GCM encrypted personal finance manager with IndexedDB storage and reports.',
           theme_color: '#0A0E17',

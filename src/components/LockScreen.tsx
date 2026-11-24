@@ -101,8 +101,15 @@ export const LockScreen: React.FC = () => {
               <Lock className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-lg font-bold tracking-tight">MyFirst Account</h1>
-              <p className="text-xs app-text-muted">{t(settings.language, 'offlineReady')}</p>
+              <div className="flex items-center gap-2">
+                <h1 className="text-lg font-bold tracking-tight">MyFinance Account</h1>
+                <span className="text-[11px] font-mono-tabular font-semibold px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-500">
+                  v2.00
+                </span>
+              </div>
+              <p className="text-xs app-text-muted">
+                by Murugaa.AiStudio · {t(settings.language, 'offlineReady')}
+              </p>
             </div>
           </div>
 

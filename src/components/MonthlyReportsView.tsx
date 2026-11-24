@@ -135,7 +135,7 @@ export const MonthlyReportsView: React.FC = () => {
                 categories,
                 settings.currency,
                 settings.dateFormat,
-                `MyFirstAccount_${monthPrefix}`
+                `MyFinanceAccount_${monthPrefix}`
               )
             }
             className="inline-flex items-center gap-1.5 rounded-lg border app-border px-3 py-2 text-xs font-medium app-text-secondary min-h-[40px]"

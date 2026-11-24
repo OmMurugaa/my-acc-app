@@ -161,10 +161,18 @@ export const OnboardingWizard: React.FC = () => {
       <div className="w-full max-w-2xl rounded-2xl border app-surface p-6 sm:p-8 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b app-border">
           <div>
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
-              MyFirst Account App
-            </h1>
-            <p className="mt-1 text-sm app-text-muted">
+            <div className="flex flex-wrap items-center gap-2">
+              <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
+                MyFinance Account
+              </h1>
+              <span className="text-xs font-mono-tabular font-semibold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-500">
+                v2.00
+              </span>
+            </div>
+            <p className="mt-0.5 text-xs font-medium text-emerald-500/90">
+              by Murugaa.AiStudio
+            </p>
+            <p className="mt-1 text-xs sm:text-sm app-text-muted">
               Step {step} of 3 · Offline AES-256-GCM Encrypted Personal Finance Vault
             </p>
           </div>

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Check, CheckCircle2, Save} from 'lucide-react';
 import {useVault} from '../context/VaultContext';
 import {t} from '../i18n/translations';
-import {APP_NAME, APP_VERSION} from '../types/finance';
+import {APP_AUTHOR, APP_NAME, APP_VERSION} from '../types/finance';
 import type {
   CurrencyCode,
   DateFormat,
@@ -275,7 +275,7 @@ export const PreferencesView: React.FC = () => {
         <h2 className="text-base font-semibold">Application Information</h2>
         <div className="text-xs sm:text-sm app-text-muted space-y-1 leading-relaxed">
           <div className="font-semibold app-text-secondary">
-            {APP_NAME} v{APP_VERSION}
+            {APP_NAME} v{APP_VERSION} {APP_AUTHOR}
           </div>
           <div>
             Currency: {settings.currency === 'EUR' ? 'Euro (€)' : CURRENCY_META[settings.currency]?.label}

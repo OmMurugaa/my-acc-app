@@ -1,5 +1,6 @@
-export const APP_NAME = 'MyFirst Account';
-export const APP_VERSION = '1.00';
+export const APP_NAME = 'MyFinance Account';
+export const APP_AUTHOR = 'by Murugaa.AiStudio';
+export const APP_VERSION = '2.00';
 
 export type Language = 'en' | 'ta' | 'tanglish';
 

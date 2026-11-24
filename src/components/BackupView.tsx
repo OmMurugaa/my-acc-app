@@ -58,7 +58,7 @@ export const BackupView: React.FC = () => {
     setExporting(true);
     try {
       const encrypted = await exportEncryptedBackup(backupPassword);
-      downloadJsonFile(encrypted, `MyFirstAccount_Backup_${getTodayISO()}.mfa`);
+      downloadJsonFile(encrypted, `MyFinanceAccount_Backup_${getTodayISO()}.mfa`);
       setNotice('AES-256-GCM encrypted backup file downloaded.');
       setBackupPassword('');
     } catch (err) {
@@ -195,7 +195,7 @@ export const BackupView: React.FC = () => {
             <h2 className="text-base font-semibold">Import / Restore Encrypted Backup</h2>
           </div>
           <p className="text-xs app-text-muted">
-            Supports MyFirst Account <span className="font-mono-tabular">.mfa</span> and MyPET Super{' '}
+            Supports MyFinance Account <span className="font-mono-tabular">.mfa</span> and MyPET Super{' '}
             <span className="font-mono-tabular">.MyPET</span> AES-256-GCM encrypted backup files.
           </p>
 
@@ -320,7 +320,7 @@ export const BackupView: React.FC = () => {
                       return;
                     }
                     const fileObj = await downloadAutoBackupSnapshot(snap, pw);
-                    downloadJsonFile(fileObj, `MyFirstAccount_AutoBackup_${snap.monthKey}.mfa`);
+                    downloadJsonFile(fileObj, `MyFinanceAccount_AutoBackup_${snap.monthKey}.mfa`);
                     setNotice(`Downloaded encrypted snapshot for ${snap.monthKey}.`);
                   }}
                   className="inline-flex items-center gap-1.5 rounded-lg border app-border px-3 py-1.5 text-xs font-medium min-h-[36px]"

@@ -28,6 +28,7 @@ import {TransactionModal} from './components/TransactionModal';
 import {TransactionsView} from './components/TransactionsView';
 import {VaultProvider, useVault} from './context/VaultContext';
 import {t} from './i18n/translations';
+import {APP_AUTHOR, APP_NAME, APP_VERSION} from './types/finance';
 import type {ActiveTab, Transaction, TransactionType} from './types/finance';
 import {formatMoney} from './utils/formatters';
 
@@ -163,10 +164,16 @@ const AppShell: React.FC = () => {
     <div className="min-h-screen app-canvas flex flex-col lg:flex-row">
       {/* Desktop Sidebar */}
       <aside className="no-print hidden lg:flex lg:flex-col lg:w-64 lg:shrink-0 border-r app-border app-surface min-h-screen sticky top-0 h-screen">
-        <div className="px-5 py-5 border-b app-border flex items-center justify-between gap-2">
-          <span className="text-base font-bold tracking-tight whitespace-nowrap">
-            MyFirst Account
-          </span>
+        <div className="px-5 py-4 border-b app-border">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-base font-bold tracking-tight whitespace-nowrap">
+              {APP_NAME}
+            </span>
+            <span className="text-[11px] font-mono-tabular font-semibold px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-500">
+              v{APP_VERSION}
+            </span>
+          </div>
+          <div className="text-[11px] app-text-muted mt-0.5">{APP_AUTHOR}</div>
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
@@ -218,9 +225,14 @@ const AppShell: React.FC = () => {
 
       {/* Mobile Compact Top Header (<= 52px) */}
       <header className="no-print lg:hidden sticky top-0 z-30 h-13 border-b app-border app-surface px-4 flex items-center justify-between gap-3">
-        <span className="text-sm font-bold tracking-tight whitespace-nowrap shrink-0">
-          MyFirst Account
-        </span>
+        <div className="flex items-baseline gap-1.5 min-w-0">
+          <span className="text-sm font-bold tracking-tight whitespace-nowrap truncate">
+            {APP_NAME}
+          </span>
+          <span className="text-[10px] font-mono-tabular font-semibold text-emerald-500 shrink-0">
+            v{APP_VERSION}
+          </span>
+        </div>
         <div className="flex items-center gap-1.5 shrink-0">
           <PWAInstallButton compact />
           <button

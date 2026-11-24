@@ -266,7 +266,7 @@ export const TransactionsView: React.FC<TransactionsViewProps> = ({
                 categories,
                 settings.currency,
                 settings.dateFormat,
-                'MyFirstAccount_Filtered_Ledger'
+                'MyFinanceAccount_Filtered_Ledger'
               )
             }
             className="inline-flex items-center gap-1.5 rounded-lg border app-border px-3 py-2 text-xs font-medium app-text-secondary hover:opacity-80 min-h-[40px] whitespace-nowrap shrink-0"

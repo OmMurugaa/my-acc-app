@@ -193,7 +193,7 @@ export const AnnualReportsView: React.FC = () => {
                 categories,
                 settings.currency,
                 settings.dateFormat,
-                `MyFirstAccount_${selectedYear}`
+                `MyFinanceAccount_${selectedYear}`
               )
             }
             className="inline-flex items-center gap-1.5 rounded-lg border app-border px-3 py-2 text-xs font-medium app-text-secondary min-h-[40px]"
@@ -432,7 +432,7 @@ export const AnnualReportsView: React.FC = () => {
                     categories,
                     settings.currency,
                     settings.dateFormat,
-                    `MyFirstAccount_${selectedYear}_${SHORT_MONTHS[drillMonthIdx]}`
+                    `MyFinanceAccount_${selectedYear}_${SHORT_MONTHS[drillMonthIdx]}`
                   )
                 }
                 disabled={drillTransactions.length === 0}
